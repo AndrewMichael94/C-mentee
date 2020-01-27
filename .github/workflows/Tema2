@@ -1,0 +1,47 @@
+Tema 2 ghicire număr 
+
+#include <iostream>
+
+using namespace std;
+
+int ghicitor (int a)
+
+{
+    cout << "Type a number= ";
+    cin  >> a;
+    
+    return a;
+}
+
+int main()
+{
+  int d,b,e;
+  bool c;
+  
+c=true; 
+d=0;
+e=ghicitor(d);
+    
+ while (c)
+ {
+     
+cout << "Type a number ";
+cin >>b;
+
+   if (e<b)
+   { 
+     cout << "I am searching for a bigger number" << endl;
+   }
+            
+     else if (e>b)
+     {
+         cout << "I am searchng for a smaller number" << endl;
+     }
+         else
+         {
+             cout << "This is your number " << e << endl;
+           break;
+         }
+    
+   }
+  }
