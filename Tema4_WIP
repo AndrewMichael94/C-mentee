@@ -1,0 +1,26 @@
+#include <string>
+#include <iostream>
+
+using namespace std;
+
+class MathOper
+{
+  public:    
+     int numar1, numar2;
+     string operation;
+  
+  int multiplying() { cout << "The result of the multiplication is" << numar1*numar2 << endl; return numar1*numar2; }
+  int division() { cout << "The result of the division is" << numar1/numar2; << endl; return numar1/numar2; }
+  int adding() { cout << "The result of the adding is" << numar1+numar2 << endl; return numar1+numar2; }
+  int substraction() { cout << "The result of the substraction is" << numar1-numar2 << endl; return numar1-numar2; }
+  void
+  int operation 
+   {
+       
+   }
+}
+
+int main()
+{
+  MathOper object;  
+}
