@@ -19,7 +19,7 @@ class MathOper
   { 
      if  (numar2 == 0)
         {
-            cout << "caz determinat " << endl;            
+            cout << "caz nedeterminat " << endl;            
         }
           else
               {
