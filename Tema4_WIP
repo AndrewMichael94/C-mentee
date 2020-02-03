@@ -6,21 +6,42 @@ using namespace std;
 class MathOper
 {
   public:    
-     int numar1, numar2;
-     string operation;
-  
-  int multiplying() { cout << "The result of the multiplication is" << numar1*numar2 << endl; return numar1*numar2; }
-  int division() { cout << "The result of the division is" << numar1/numar2; << endl; return numar1/numar2; }
-  int adding() { cout << "The result of the adding is" << numar1+numar2 << endl; return numar1+numar2; }
-  int substraction() { cout << "The result of the substraction is" << numar1-numar2 << endl; return numar1-numar2; }
-  void
-  int operation 
-   {
-       
-   }
-}
+     double numar1, numar2;
+     string zero_division;
+     
+  void Numar1() {cout <<"The first number is "; cin >> numar1;}
+  void Numar2() {cout <<"The second number is "; cin >> numar2;}
+  void multiplying() { cout << "The result of the multiplication is " << numar1*numar2; cout << endl;}
+  void adding() { cout << "The result of the adding is " << numar1+numar2; cout << endl;}
+  void substraction() { cout << "The result of the substraction is " << numar1-numar2; cout << endl;}
+ 
+  void division() 
+  { 
+     if  (numar2 == 0)
+        {
+            cout << "caz determinat " << endl;            
+        }
+          else
+              {
+              cout << "The result of the division is " <<numar1/numar2; cout << endl;
+              
+              }
+  }
+ 
+};
 
 int main()
 {
-  MathOper object;  
+  MathOper object; 
+ 
+  object.numar1=10;
+  object.numar2=0;
+  object.multiplying();
+  object.division();
+  object.substraction();
+  object.adding();
+ /*
+  object.Numar1;  Why it does not work? I couldn't find an answer on the internet that could make me understand the error
+  object.Numar2;
+ */
 }
