@@ -7,41 +7,36 @@ class MathOper
 {
   public:    
      double numar1, numar2;
-     string zero_division;
-     
-  void Numar1() {cout <<"The first number is "; cin >> numar1;}
-  void Numar2() {cout <<"The second number is "; cin >> numar2;}
-  void multiplying() { cout << "The result of the multiplication is " << numar1*numar2; cout << endl;}
-  void adding() { cout << "The result of the adding is " << numar1+numar2; cout << endl;}
-  void substraction() { cout << "The result of the substraction is " << numar1-numar2; cout << endl;}
  
-  void division() 
-  { 
-     if  (numar2 == 0)
-        {
-            cout << "caz nedeterminat " << endl;            
-        }
-          else
-              {
-              cout << "The result of the division is " <<numar1/numar2; cout << endl;
-              
-              }
-  }
- 
-};
+  double multiplying() { return numar1*numar2;}
+  double adding() { return numar1+numar2; }
+  double substraction() {return numar1-numar2;}
+  double division() { return numar1/numar2;}
+ };
 
 int main()
 {
-  MathOper object; 
+    double a,b;
+    MathOper object; 
+    
+// The decleration of the first number and second number 
+ object.numar1=20;
+ object.numar2=0;
+
+ cout << "The first number is " << object.numar1 << endl;
+ cout << "The second number is " << object.numar2 << endl;
+  
+ cout << object.numar1 << "*" <<object.numar2 <<"=" << object.multiplying() << endl;
+ cout << object.numar1 << "+" <<object.numar2 <<"=" << object.adding() << endl;
+ cout << object.numar1 << "-" <<object.numar2 <<"=" << object.substraction() << endl;
  
-  object.numar1=10;
-  object.numar2=0;
-  object.multiplying();
-  object.division();
-  object.substraction();
-  object.adding();
- /*
-  object.Numar1;  Why it does not work? I couldn't find an answer on the internet that could make me understand the error
-  object.Numar2;
- */
+ if (object.numar2==0)
+  {
+      cout << "Undefined case detected " << object.numar1 << "/" << object.numar2;
+  }
+      else 
+       {
+         cout << object.numar1 << "/" <<object.numar2 <<"=" << object.division() << endl;   
+       }
 }
+   
