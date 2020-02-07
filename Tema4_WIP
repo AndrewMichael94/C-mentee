@@ -16,16 +16,19 @@ class MathOper
 
 int main()
 {
-    double a,b;
-    MathOper object; 
+
+ MathOper object; 
     
 // The decleration of the first number and second number 
  object.numar1=20;
- object.numar2=0;
+ object.numar2=30;
+ cout << endl;
 
  cout << "The first number is " << object.numar1 << endl;
  cout << "The second number is " << object.numar2 << endl;
-  
+ 
+ // Mathematical Operations
+ 
  cout << object.numar1 << "*" <<object.numar2 <<"=" << object.multiplying() << endl;
  cout << object.numar1 << "+" <<object.numar2 <<"=" << object.adding() << endl;
  cout << object.numar1 << "-" <<object.numar2 <<"=" << object.substraction() << endl;
