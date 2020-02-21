@@ -1,0 +1,88 @@
+#include <iostream>
+#include <string>
+
+class Airbus {
+public: 
+       
+       Airbus(std::string name; int no_pass,age,price; )    
+           {
+            name=_name;
+            no_pass=_no_pass;
+            age=_age;
+            price=_price;
+           }
+       
+           std::string getName() {return name;}
+           int getAge() {return age;}
+           int getPass() {return no_pass;}
+           int getPrice() {return price;}
+       
+      protected:
+         std::string name;
+         int no_pass,age;
+      private:
+         int price;
+     
+         void setAge(int AgeValue)
+           {
+             if (AgeValue<10)
+              {
+                age=AgeValue;
+                std::cout <<" The aircraft is still young"; std:: endl;
+              }
+                else if (age>10 && age<20)
+                   {
+                     age=AgeValue;
+                     std::cout <<" The aircraft is not that old "; std:: endl;
+                   }
+                      else 
+                      {
+                          age=AgeValue;
+                          std::cout <<" The aircraft is old"; std:: endl;
+                      }
+           }       
+     
+          void setSize (int NoPass)
+          {
+             if (NoPass<20)
+              {
+                 no_pass=NoPass;
+                 std::cout << "This aircraft" << getName() <<" is small" ; std:: endl;
+              }
+                else if (NoPass>20 && NoPass<100)
+                  {
+                    no_pass=NoPass;
+                    std::cout << "This aircraft" << getName() <<" is medium sized" ; std:: endl;
+                  }
+                    else 
+                    {
+                         no_pass=NoPass;
+                         std::cout << "This aircraft" << getName() <<" is big" ; std:: endl;
+                    }    
+          }
+          
+          void setPrice (int Price)
+           {
+             if (Price<100)
+              {
+                price=Price;
+                std::cout << " This aicraft costs " << getPrice() << " and is within budget"; std:: endl;
+              }
+                else
+                  {
+                    price=Price;
+                    std::cout << " This aicraft costs " << getPrice() << " and is not within budget"; std:: endl;
+                  }
+           }
+    
+       void identity() {std::cout << "I am " << getName() << ", i can transport " << getPass() << " of passangers " << " and I am in service for " << getAge() << " years." < <"If you want me, my price is " << getPrice() <<"millions"  << std::endl;} 
+};    
+
+
+       
+int main()
+{
+  Airbus object ("Airbus");
+  object.identity();
+  
+}
