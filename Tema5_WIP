@@ -1,88 +1,53 @@
 #include <iostream>
 #include <string>
 
-class Airbus {
+class Aircraft {
 public: 
-       
-       Airbus(std::string name; int no_pass,age,price; )    
-           {
-            name=_name;
-            no_pass=_no_pass;
-            age=_age;
-            price=_price;
-           }
-       
-           std::string getName() {return name;}
-           int getAge() {return age;}
-           int getPass() {return no_pass;}
-           int getPrice() {return price;}
-       
-      protected:
-         std::string name;
-         int no_pass,age;
-      private:
-         int price;
-     
-         void setAge(int AgeValue)
-           {
-             if (AgeValue<10)
-              {
-                age=AgeValue;
-                std::cout <<" The aircraft is still young"; std:: endl;
-              }
-                else if (age>10 && age<20)
-                   {
-                     age=AgeValue;
-                     std::cout <<" The aircraft is not that old "; std:: endl;
-                   }
-                      else 
-                      {
-                          age=AgeValue;
-                          std::cout <<" The aircraft is old"; std:: endl;
-                      }
-           }       
-     
-          void setSize (int NoPass)
+       int age;
+       std::string name;
+       Aircraft(std::string Name, int Age) { name = Name; age = Age;}
+         
+         std::string getName() {return name;}
+         void setName(std::string Name)
           {
-             if (NoPass<20)
-              {
-                 no_pass=NoPass;
-                 std::cout << "This aircraft" << getName() <<" is small" ; std:: endl;
-              }
-                else if (NoPass>20 && NoPass<100)
-                  {
-                    no_pass=NoPass;
-                    std::cout << "This aircraft" << getName() <<" is medium sized" ; std:: endl;
-                  }
-                    else 
-                    {
-                         no_pass=NoPass;
-                         std::cout << "This aircraft" << getName() <<" is big" ; std:: endl;
-                    }    
+            if (Name == "Airbus") {name = Name;}
+               else  {name = Name;}
           }
           
-          void setPrice (int Price)
+         int getAge() {return age;}
+         void setAge(int Age)
            {
-             if (Price<100)
-              {
-                price=Price;
-                std::cout << " This aicraft costs " << getPrice() << " and is within budget"; std:: endl;
-              }
-                else
-                  {
-                    price=Price;
-                    std::cout << " This aicraft costs " << getPrice() << " and is not within budget"; std:: endl;
-                  }
-           }
+             if (Age<10) {age = Age;}
+                  else if (Age>10 && Age<20) { age = Age;}
+                       else { age = Age; }
+           }   
+/*          
+protected:
+  std::string name;
+  int age;
+
+private:
+  int private_age;
+*/    
+};
+
+class Gliders : public Aircraft {
+  public:    
+    Derived d() {std::cout << "Gliders are not aircraft";}
+    ~Derived d() {std::cout << "Gliders can derive from aircraft but are not aircraft, due to the lack of a propulsion system";}
     
-       void identity() {std::cout << "I am " << getName() << ", i can transport " << getPass() << " of passangers " << " and I am in service for " << getAge() << " years." < <"If you want me, my price is " << getPrice() <<"millions"  << std::endl;} 
 };    
+
 
 
        
 int main()
-{
-  Airbus object ("Airbus");
-  object.identity();
-  
+{ 
+  Aircraft object ("Boeing", 30);
+     if (object.getAge() <= 10)  {   std::cout <<" The aircraft " << object.getName() << " is young, it has " << object.getAge() << " years." << std:: endl;}
+                else if (object.getAge() >= 10 && object.getAge() <= 20)  {   std::cout <<" The aircraft is not that old, " << object.getAge() << " years." << std:: endl;}
+                      else {std::cout <<" The aircraft " << object.getName() <<  " is old, it has "<< object.getAge() << " years." << std:: endl;} 
+
+  Gliders::Aircraft("Airbus",20);
+ // std::cout << object.getName() << Gliders.getAge();
 }
