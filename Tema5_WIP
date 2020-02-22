@@ -28,17 +28,17 @@ int age;
      if (Name == "Airbus") {name = Name;}
         else  {name = Name;}
    }    
-/*
+
 protected:
-  std::string name;
-  int age;
+  std::string type;
+  int no_pass; //noumber of passengers
 
 private:
-  int private_age;
-*/
+  int private_research;
+
 };
 
-class Boeing : public Airbus {};
+class Boeing (std::string Name, int Age) : public Airbus(Name,Age) {};
 
 int main()
 {
