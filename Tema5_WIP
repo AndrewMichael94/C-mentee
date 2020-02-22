@@ -48,4 +48,6 @@ int main()
                 else if (Airbus.age >= 10 && Airbus.age <= 20)  {   std::cout <<" The aircraft is not that old, " << Airbus.age << " years." << std:: endl;}
                       else {std::cout <<" The aircraft " << Airbus.name <<  " is old, it has "<< Airbus.age << " years." << std:: endl;} 
 
+  Boeing Boeing ("Boeing",30);
+  std::cout <<"The name of the aircraft is " << Boeing.name << " and it is in service for " << Boeing.age << " years.";
 }
