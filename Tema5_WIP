@@ -3,8 +3,10 @@
 
 class Airbus {
 public: 
+
 std::string name;
 int age;
+
        Airbus(std::string Name, int Age)    
            {
             name=Name;
@@ -26,17 +28,24 @@ int age;
      if (Name == "Airbus") {name = Name;}
         else  {name = Name;}
    }    
+/*
+protected:
+  std::string name;
+  int age;
 
-         
-
+private:
+  int private_age;
+*/
 };
 
+class Boeing : public Airbus {};
 
 int main()
 {
- 
-  Airbus object ("Boeing", 30);
-     if (object.getAge() <= 10)  {   std::cout <<" The aircraft " << object.getName() << " is young, it has " << object.getAge() << " years." << std:: endl;}
-                else if (object.getAge() >= 10 && object.getAge() <= 20)  {   std::cout <<" The aircraft is not that old, " << object.getAge() << " years." << std:: endl;}
-                      else {std::cout <<" The aircraft " << object.getName() <<  " is old, it has "<< object.getAge() << " years." << std:: endl;} 
+
+  Airbus Airbus ("Airbus", 30);
+     if (Airbus.age <= 10)  {   std::cout <<" The aircraft " << Airbus.name << " is young, it has " << Airbus.age << " years." << std:: endl;}
+                else if (Airbus.age >= 10 && Airbus.age <= 20)  {   std::cout <<" The aircraft is not that old, " << Airbus.age << " years." << std:: endl;}
+                      else {std::cout <<" The aircraft " << Airbus.name <<  " is old, it has "<< Airbus.age << " years." << std:: endl;} 
+
 }
