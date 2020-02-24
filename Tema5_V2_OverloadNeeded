@@ -1,0 +1,36 @@
+#include <iostream>
+#include <string>
+
+class Air_con {
+public:
+
+int Temp;
+
+   int temperature (int Temp) { return Temp ;}
+   void start () {std::cout << "Cold air incomming due to the desert like weather."<<std::endl;}
+};
+
+class Room : public Air_con {
+private:
+  void start () {std::cout << "Permision denied";}
+};
+
+class Room2 : private Air_con {
+private:
+  void start () {std::cout << "Permision denied";}
+};
+
+int main()
+{
+
+Air_con Air_con;
+Room Room;
+Room2 Room2;
+  if (Room.temperature(28) > 25) 
+  { 
+      Air_con.start(); 
+      std::cout << "The temperature in the room is " << Room.temperature(28) << "°C" << std::endl;
+      std::cout << "The air conditioning will be set to " << Air_con.temperature(22) <<" °C";
+  }; 
+Room2.start();
+}
