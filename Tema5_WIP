@@ -7,13 +7,7 @@ public:
 std::string name;
 int age;
 
-       Airbus(std::string Name, int Age)    
-           {
-            name=Name;
-            age=Age;
-           }
-
-           std::string getName() {return name;}
+            std::string getName() {return name;}
            int getAge() {return age;}
 
   void setAge(int Age)
@@ -38,16 +32,76 @@ private:
 
 };
 
-class Boeing (std::string Name, int Age) : public Airbus(Name,Age) {};
+class Boeing : public Airbus {};
+
+class Air_con {
+public:
+
+int Temp;
+
+   int temperature (int Temp) { return Temp ;}
+   void start () {std::cout << "Cold air incomming due to the desert like weather."<<std::endl;}
+};
+
+class Room : public Air_con {
+private:
+  void start () {std::cout << "Permision denied";}
+};
+
+class Room2 : private Air_con {
+private:
+  void start () {std::cout << "Permision denied";}
+};
 
 int main()
 {
 
-  Airbus Airbus ("Airbus", 30);
-     if (Airbus.age <= 10)  {   std::cout <<" The aircraft " << Airbus.name << " is young, it has " << Airbus.age << " years." << std:: endl;}
+  Airbus Airbus;
+  Boeing Boeing;
+  
+   Airbus.name="A350-XWB";
+   Airbus.age=10;
+   Boeing.name="B777x";
+   Boeing.age=1;
+    
+     if (Airbus.age <= 10)  {   std::cout <<" The aircraft " << Airbus.name << " is young, it is in service for " << Airbus.age << " years." << std:: endl;}
                 else if (Airbus.age >= 10 && Airbus.age <= 20)  {   std::cout <<" The aircraft is not that old, " << Airbus.age << " years." << std:: endl;}
                       else {std::cout <<" The aircraft " << Airbus.name <<  " is old, it has "<< Airbus.age << " years." << std:: endl;} 
+     
+     if (Boeing.age <= 10)  {   std::cout <<" The aircraft " << Boeing.name << " is young, it is in service for " << Boeing.age << " years." << std:: endl;}
+                else if (Boeing.age >= 10 && Boeing.age <= 20)  {   std::cout <<" The aircraft is not that old, " << Boeing.age << " years." << std:: endl;}
+                      else {std::cout <<" The aircraft " << Boeing.name <<  " is old, it has "<< Boeing.age << " years." << std:: endl;}
 
-  Boeing Boeing ("Boeing",30);
-  std::cout <<"The name of the aircraft is " << Boeing.name << " and it is in service for " << Boeing.age << " years.";
+class Air_con {
+public:
+
+int Temp;
+
+   int temperature (int Temp) { return Temp ;}
+   void start () {std::cout << "Cold air incomming due to the desert like weather."<<std::endl;}
+};
+
+class Room : public Air_con {
+private:
+  void start () {std::cout << "Permision denied";}
+};
+
+class Room2 : private Air_con {
+private:
+  void start () {std::cout << "Permision denied";}
+};
+
+int main()
+{
+
+Air_con Air_con;
+Room Room;
+Room2 Room2;
+  if (Room.temperature(28) > 25) 
+  { 
+      Air_con.start(); 
+      std::cout << "The temperature in the room is " << Room.temperature(28) << "°C" << std::endl;
+      std::cout << "The air conditioning will be set to " << Air_con.temperature(22) <<" °C";
+  }; 
+Room2.start();
 }
