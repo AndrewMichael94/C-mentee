@@ -53,8 +53,13 @@ private:
   void start () {std::cout << "Permision denied";}
 };
 
+
 int main()
 {
+
+//First part of the homework;
+
+std:: cout << "This section uses a derived class with  public inheritance" << std::endl;
 
   Airbus Airbus;
   Boeing Boeing;
@@ -72,36 +77,20 @@ int main()
                 else if (Boeing.age >= 10 && Boeing.age <= 20)  {   std::cout <<" The aircraft is not that old, " << Boeing.age << " years." << std:: endl;}
                       else {std::cout <<" The aircraft " << Boeing.name <<  " is old, it has "<< Boeing.age << " years." << std:: endl;}
 
-class Air_con {
-public:
 
-int Temp;
+//Second part of the homework
 
-   int temperature (int Temp) { return Temp ;}
-   void start () {std::cout << "Cold air incomming due to the desert like weather."<<std::endl;}
-};
-
-class Room : public Air_con {
-private:
-  void start () {std::cout << "Permision denied";}
-};
-
-class Room2 : private Air_con {
-private:
-  void start () {std::cout << "Permision denied";}
-};
-
-int main()
-{
+std:: cout << "This section uses a derived class with a public and private inheritance" << std::endl;
 
 Air_con Air_con;
 Room Room;
 Room2 Room2;
+ 
   if (Room.temperature(28) > 25) 
   { 
       Air_con.start(); 
       std::cout << "The temperature in the room is " << Room.temperature(28) << "°C" << std::endl;
       std::cout << "The air conditioning will be set to " << Air_con.temperature(22) <<" °C";
   }; 
-Room2.start();
+//Room2.start(); //private inheritance
 }
