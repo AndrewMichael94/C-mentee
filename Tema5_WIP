@@ -7,8 +7,8 @@ public:
 std::string name;
 int age;
 
-            std::string getName() {return name;}
-           int getAge() {return age;}
+  std::string getName() {return name;}
+  int getAge() {return age;}
 
   void setAge(int Age)
     {
@@ -23,13 +23,6 @@ int age;
         else  {name = Name;}
    }    
 
-protected:
-  std::string type;
-  int no_pass; //noumber of passengers
-
-private:
-  int private_research;
-
 };
 
 class Boeing : public Airbus {};
@@ -39,8 +32,8 @@ public:
 
 int Temp;
 
-   int temperature (int Temp) { return Temp ;}
-   void start () {std::cout << "Cold air incomming due to the desert like weather."<<std::endl;}
+int temperature (int Temp) { return Temp ;}
+  void start () {std::cout << "Cold air incomming due to the desert like weather."<<std::endl;}
 };
 
 class Room : public Air_con {
@@ -59,7 +52,7 @@ int main()
 
 //First part of the homework;
 
-std:: cout << "This section uses a derived class with  public inheritance" << std::endl;
+std:: cout << "This section uses a derived class with  public inheritance" << std::endl << std::endl;
 
   Airbus Airbus;
   Boeing Boeing;
@@ -78,8 +71,9 @@ std:: cout << "This section uses a derived class with  public inheritance" << st
                       else {std::cout <<" The aircraft " << Boeing.name <<  " is old, it has "<< Boeing.age << " years." << std:: endl;}
 
 
-//Second part of the homework
 
+//Second part of the homework
+std:: cout << std::endl << "**************************************************" << std::endl;
 std:: cout << "This section uses a derived class with a public and private inheritance" << std::endl;
 
 Air_con Air_con;
@@ -89,8 +83,8 @@ Room2 Room2;
   if (Room.temperature(28) > 25) 
   { 
       Air_con.start(); 
-      std::cout << "The temperature in the room is " << Room.temperature(28) << "°C" << std::endl;
+      std::cout << "The temperature in the room is " << Room.temperature(28) << "°C" << std::endl << std::endl;
       std::cout << "The air conditioning will be set to " << Air_con.temperature(22) <<" °C";
   }; 
-//Room2.start(); //private inheritance
+//Room2.start();
 }
