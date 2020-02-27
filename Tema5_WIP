@@ -32,8 +32,26 @@ public:
 
 int Temp;
 
-int temperature (int Temp) { return Temp ;}
+int temperature (int Temp) { return Temp;   }
+  
   void start () {std::cout << "Cold air incomming due to the desert like weather."<<std::endl;}
+  int analysis (int ambient_temperature)
+   {
+       bool status;
+       Air_con Air_con ;
+       
+    if (Air_con.temperature(15) < ambient_temperature)
+        {
+           status=true;
+           std::cout << "It is colder than it should be" << std::endl;
+        } 
+          else {
+              status=false;
+              std::cout << "It is warmer than it should be " << std::endl;
+               }
+   
+       return ambient_temperature;
+   }
 };
 
 class Room : public Air_con {
@@ -80,11 +98,11 @@ Air_con Air_con;
 Room Room;
 Room2 Room2;
  
-  if (Room.temperature(28) > 25) 
+  if (Room.temperature(15) < Air_con_analysis(20)) 
   { 
       Air_con.start(); 
-      std::cout << "The temperature in the room is " << Room.temperature(28) << "°C" << std::endl << std::endl;
-      std::cout << "The air conditioning will be set to " << Air_con.temperature(22) <<" °C";
+      std::cout << "The temperature in the room is " << Room.temperature(15) << "°C" << std::endl;
+      std::cout << "The air conditioning will be set to " << Air_con.temperature(23) <<" °C";
   }; 
 //Room2.start();
 }
