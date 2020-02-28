@@ -30,15 +30,15 @@ int age;
 
 class Boeing : public Airbus {
 public:
- //    Boeing() {std::cout << "Derived" << std::endl;}
- //   ~Boeing() {std::cout << "~Derived" << std::endl;}
+     Boeing() {std::cout << "Derived" << std::endl;}
+    ~Boeing() {std::cout << "~Derived" << std::endl;}
 };
 
 class Air_con {
 public:
 
-// Air_con() {std::cout << "Base" << std::endl;}
-//~Air_con() {std::cout << "~Base" << std::endl;}
+ Air_con() {std::cout << "Base" << std::endl;}
+~Air_con() {std::cout << "~Base" << std::endl;}
 
 int Temp;
 
@@ -65,8 +65,8 @@ int temperature (int Temp) { return Temp;   }
 
 class Room : public Air_con {
 public:
-// Room() {std::cout << "Derived" << std::endl;}
-//~Room() {std::cout << "~Derived" << std::endl;}
+ Room() {std::cout << "Derived" << std::endl;}
+~Room() {std::cout << "~Derived" << std::endl;}
 
 private:
   void start () {std::cout << "Permision denied" << std::endl;}
