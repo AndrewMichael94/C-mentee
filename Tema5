@@ -117,13 +117,13 @@ Room Room;
       std::cout << "The air conditioning will be set to " << Air_con.temperature(23) <<" °C"<<std::endl<<std::endl;
   }; 
   
-  if (Air_con.analysis(false)=true) 
+  if (Air_con.analysis(false)==true) 
   {
-      std::cout<< " The airconditioning device has a malfunction " << std::endl;
+      std::cout<< " The airconditioning device has a malfunction " << std::endl<<std::endl;
   }
         else 
           {
-              std::cout<< "The system is working in parameters" << std::endl;
+              std::cout<< "The system is working in parameters" << std::endl<<std::endl;
           }
   
 //Room.start();
