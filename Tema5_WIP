@@ -4,6 +4,9 @@
 class Airbus {
 public: 
 
+ Airbus() {std::cout << "Base" << std::endl;}
+~Airbus() {std::cout << "~Base" << std::endl;}
+
 std::string name;
 int age;
 
@@ -25,10 +28,17 @@ int age;
 
 };
 
-class Boeing : public Airbus {};
+class Boeing : public Airbus {
+public:
+     Boeing() {std::cout << "Derived" << std::endl;}
+    ~Boeing() {std::cout << "~Derived" << std::endl;}
+};
 
 class Air_con {
 public:
+
+ Air_con() {std::cout << "Base" << std::endl;}
+~Air_con() {std::cout << "~Base" << std::endl;}
 
 int Temp;
 
@@ -55,15 +65,15 @@ int temperature (int Temp) { return Temp;   }
 };
 
 class Room : public Air_con {
-private:
-  void start () {std::cout << "Permision denied";}
-};
+public:
+ Room() {std::cout << "Base" << std::endl;}
+~Room() {std::cout << "~Base" << std::endl;}
 
-class Room2 : private Air_con {
 private:
-  void start () {std::cout << "Permision denied";}
+  void start () {std::cout << "Permision denied" << std::endl;}
+protected:
+  void snap() {std::cout << "This function is protected" << std::endl;}
 };
-
 
 int main()
 {
@@ -96,13 +106,15 @@ std:: cout << "This section uses a derived class with a public and private inher
 
 Air_con Air_con;
 Room Room;
-Room2 Room2;
+
  
   if (Room.temperature(15) < Air_con.analysis(16)) 
   { 
       Air_con.start(); 
       std::cout << "The reading from the room temperature sensor is  " << Room.temperature(15) << "°C" << std::endl;
-      std::cout << "The air conditioning will be set to " << Air_con.temperature(23) <<" °C";
+      std::cout << "The air conditioning will be set to " << Air_con.temperature(23) <<" °C"<<std::endl<<std::endl;
   }; 
-//Room2.start();
+  
+//Room.start();
+//Room.snap();
 }
