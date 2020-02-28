@@ -92,16 +92,16 @@ std:: cout << "This section uses a derived class with  public inheritance" << st
 
 //Second part of the homework
 std:: cout << std::endl << "**************************************************" << std::endl;
-std:: cout << "This section uses a derived class with a public and private inheritance" << std::endl;
+std:: cout << "This section uses a derived class with a public and private inheritance" << std::endl<<std::endl;
 
 Air_con Air_con;
 Room Room;
 Room2 Room2;
  
-  if (Room.temperature(15) < Air_con_analysis(20)) 
+  if (Room.temperature(15) < Air_con.analysis(16)) 
   { 
       Air_con.start(); 
-      std::cout << "The temperature in the room is " << Room.temperature(15) << "°C" << std::endl;
+      std::cout << "The reading from the room temperature sensor is  " << Room.temperature(15) << "°C" << std::endl;
       std::cout << "The air conditioning will be set to " << Air_con.temperature(23) <<" °C";
   }; 
 //Room2.start();
