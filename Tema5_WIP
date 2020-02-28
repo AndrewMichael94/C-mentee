@@ -45,9 +45,9 @@ int Temp;
 int temperature (int Temp) { return Temp;   }
   
   void start () {std::cout << "Cold air incomming due to the desert like weather."<<std::endl;}
+  
   int analysis (int ambient_temperature)
    {
-       bool status;
        Air_con Air_con ;
        
     if (Air_con.temperature(15) < ambient_temperature)
@@ -61,6 +61,9 @@ int temperature (int Temp) { return Temp;   }
    
        return ambient_temperature;
    }
+   
+   bool analysis (bool status)  {  }
+   
 };
 
 class Room : public Air_con {
@@ -113,6 +116,15 @@ Room Room;
       std::cout << "The reading from the room temperature sensor is  " << Room.temperature(15) << "°C" << std::endl;
       std::cout << "The air conditioning will be set to " << Air_con.temperature(23) <<" °C"<<std::endl<<std::endl;
   }; 
+  
+  if (Air_con.analysis(false)=true) 
+  {
+      std::cout<< " The airconditioning device has a malfunction " << std::endl;
+  }
+        else 
+          {
+              std::cout<< "The system is working in parameters" << std::endl;
+          }
   
 //Room.start();
 //Room.snap();
