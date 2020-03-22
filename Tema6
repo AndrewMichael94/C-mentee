@@ -1,0 +1,45 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+
+//Funtion that generates the text file
+void WriteText()
+{
+std::ofstream fileOut("file.txt");
+fileOut << "step on no pets";
+fileOut.close(); 
+}
+
+//Function that reads the text file
+void ReadText()
+{
+std::ifstream fileIn("file.txt");
+std::string line;
+while (getline(fileIn, line))
+{
+std::cout<< line;
+}
+
+std::cout<< std::endl;
+std::cout<< "The following text shall be mirrored"<<std::endl;
+
+for (int i=line.size(); i>=0; --i)
+{
+std::cout<< line[i];
+}
+
+/*
+for (std::string revere_iterator; rit=line.rbegin(); rit!=line.rend(); ++rit)
+{
+std::cout<< *rit;
+}
+*/
+
+    
+}
+
+int main()
+{
+WriteText();
+ReadText();
+}
